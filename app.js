@@ -3,10 +3,10 @@ const app=express();
 const cors=require('cors');//middleware
 const bodyparser=require('body-parser');
 
-const productRoutes=require("../e-commerce_mvc/routes/ProductRoutes");
-const UserRoutes=require('../e-commerce_mvc/routes/UserRoutes');
-const CartRoutes=require('../e-commerce_mvc/routes/CartRoutes');
-const OrderRoutes=require('../e-commerce_mvc/routes/OrderRoutes');
+const productRoutes=require("../Ecommerce/routes/ProductRoutes");
+const UserRoutes=require('../Ecommerce/routes/UserRoutes');
+const CartRoutes=require('../Ecommerce/routes/CartRoutes');
+const OrderRoutes=require('../Ecommerce/routes/OrderRoutes');
 
 const mongoose=require('mongoose');
 
@@ -27,6 +27,8 @@ app.use("/",UserRoutes);
 app.use("/",CartRoutes);
 app.use("/",OrderRoutes);
 
-app.listen(3000,()=>{
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT,()=>{
     console.log("server is running");
 })
