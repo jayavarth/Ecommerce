@@ -3,10 +3,10 @@ const app=express();
 const cors=require('cors');//middleware
 const bodyparser=require('body-parser');
 
-const productRoutes=require("../Ecommerce/routes/ProductRoutes");
-const UserRoutes=require('../Ecommerce/routes/UserRoutes');
-const CartRoutes=require('../Ecommerce/routes/CartRoutes');
-const OrderRoutes=require('../Ecommerce/routes/OrderRoutes');
+const productRoutes=require("./routes/ProductRoutes");
+const UserRoutes=require('./routes/UserRoutes');
+const CartRoutes=require('./routes/CartRoutes');
+const OrderRoutes=require('./routes/OrderRoutes');
 
 const mongoose=require('mongoose');
 
