@@ -58,7 +58,12 @@ const CreateOrders = async (req, res) => {
 //products,order status,ordered date,delivery date
 const GetOrders=async(req,res)=>{
     try{
-        const userid=req.params.id;
+        const token = req.header("Authorization").split(" ")[1];
+        const decoded = jwt.verify(token, "secret_key");
+        const userid = decoded.userId;
+
+        // const userid=req.user;
+        // console.log(userid);
         const Orders=await Order.findOne({UserId:userid});
         if(Orders){
             const items=Orders.Products;

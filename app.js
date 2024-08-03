@@ -19,7 +19,7 @@ app.set("view engine","ejs");//view holds ejs file format
 
 
 app.use(express.json())
-app.use(cors)
+app.use(cors())
 app.use(bodyparser.json());
 
 app.use("/",productRoutes);
