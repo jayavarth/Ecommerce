@@ -11,7 +11,6 @@ const AddCart=async(req,res)=>{
         // const decoded = jwt.verify(token, "secret_key");
         // const User_id = decoded.userId;
         const User_id=req.user;
-        console.log(User_id)
 
         const productid=req.body.productid;
         const quantity=req.body.quantity;

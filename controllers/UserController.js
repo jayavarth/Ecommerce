@@ -26,7 +26,7 @@ const Login=async(req,res)=>{
             return res.status(404);
         }
         const token= jwt.sign({userId:user._id},"secret_key",{
-            expiresIn:"1h"
+            expiresIn:"8h"
         });
         res.json({token});
     }catch(err){
