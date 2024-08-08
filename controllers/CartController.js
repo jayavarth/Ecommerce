@@ -7,10 +7,11 @@ const Product=require('../models/ProductModel');
 
 const AddCart=async(req,res)=>{
     try{
-        const token = req.header("Authorization").split(" ")[1];
-        const decoded = jwt.verify(token, "secret_key");
-        const User_id = decoded.userId;
-        // const User_id=req.user;
+        // const token = req.header("Authorization").split(" ")[1];
+        // const decoded = jwt.verify(token, "secret_key");
+        // const User_id = decoded.userId;
+        const User_id=req.user;
+        console.log(User_id)
 
         const productid=req.body.productid;
         const quantity=req.body.quantity;
@@ -92,5 +93,3 @@ const deleteproduct = async (req, res) => {
 
 
 module.exports={AddCart,GetCart,deleteproduct};
-
-

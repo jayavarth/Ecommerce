@@ -25,7 +25,7 @@ const Login=async(req,res)=>{
         if(!validpasssword){
             return res.status(404);
         }
-        const token= jwt.sign({ _id:user._id},"secret_key",{
+        const token= jwt.sign({userId:user._id},"secret_key",{
             expiresIn:"1h"
         });
         res.json({token});
