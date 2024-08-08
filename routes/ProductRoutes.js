@@ -3,7 +3,7 @@ const Router=express.Router();
 const productController=require('../controllers/productController'); 
 const auth=require('../middleware/Auth')
 
-Router.get('/products',auth,productController.getAllProducts);
+Router.get('/products',productController.getAllProducts);
 Router.post('/addproducts',productController.AddProducts);
 Router.delete('/removeproducts/:id',productController.RemoveProducts);
 Router.put('/updateproducts/:id',productController.UpdateProducts);
